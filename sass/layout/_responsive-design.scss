@@ -1,0 +1,246 @@
+// Import Mixins
+@use "../sass/mixins/mixin-for-breakpoints" as *;
+
+// Import Maps
+@use "../sass/maps/map-for-breakpoints" as *;
+
+/* - Start Responsive Design - */
+
+/* - Start Sidebar - */
+.sidebar {
+    @include breakpoint(md, max) {
+        width: 58px;
+        padding: 10px;
+
+        >h3 {
+            font-size: 13px;
+            margin-bottom: 15px;
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* - End Sidebar - */
+
+/* - Start Content - */
+.wrapper {
+    @include breakpoint(md, max) {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+
+/* - End Content - */
+
+/* - Start Welcome Widget - */
+.welcome {
+    @include breakpoint(md, max) {
+        .intro {
+            padding-bottom: 30px;
+        }
+
+        .avatar {
+            margin-left: 0;
+        }
+
+        .body {
+            >div {
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+    }
+}
+
+/* - Start Tickets - */
+.tickets {
+    @include breakpoint(md, max) {
+        .box {
+            width: 100%;
+        }
+    }
+}
+
+/* - End Tickets - */
+
+/* - Start Latest News - */
+.latest-news {
+    @include breakpoint(md, max) {
+        .news-row {
+            display: block;
+
+            .label {
+                width: fit-content;
+                margin: 10px auto;
+            }
+        }
+    }
+}
+
+/* - End Latest News - */
+
+/* - Start Settings - */
+.settings-page {
+    @include breakpoint(md, max) {
+        grid-template-columns: minmax(100px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+
+.backup-control {
+    @include breakpoint(md, max) {
+        .servers {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+/* - End Settings - */
+
+/* - Start Profile Page - */
+.profile-page {
+    @include breakpoint(md, max) {
+
+        .overview,
+        .other-data,
+        .activity {
+            flex-direction: column;
+        }
+
+        .info-box {
+            .toggle-switch {
+                margin: auto;
+            }
+        }
+
+        .activity {
+            img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .date {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+.profile-page {
+    @include breakpoint(md, min) {
+        .avatar-box {
+            border-right: 1px solid #eee;
+        }
+
+        .activity {
+            .date {
+                margin-left: auto;
+                text-align: right;
+            }
+        }
+    }
+}
+
+/* - End Profile Page - */
+
+/* - Start Projects Page - */
+.projects-page {
+    @include breakpoint(md, max) {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+
+        .project {
+
+            .do,
+            .info {
+                flex-direction: column;
+            }
+        }
+
+        .project {
+            .do {
+                span {
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .prog {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
+
+/* - End Projects Page - */
+
+/* - Start Courses Page  - */
+.courses-page {
+    @include breakpoint(md, max) {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+
+/* - End Courses Page  - */
+
+/* - Start Friends Page - */
+.friends-page {
+    @include breakpoint(md, max) {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+
+/* - End Friends Page - */
+
+/* - Start Files Page - */
+.files-page {
+    @include breakpoint(md, max) {
+        flex-direction: column;
+        align-items: normal;
+    }
+}
+
+/* - End Files Page - */
+
+/* - Start Plans Page - */
+.plans-page {
+    @include breakpoint(md, max) {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+
+/* - End Plans Page  - */
+
+/* - End Responsive Design - */

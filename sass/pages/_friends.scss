@@ -1,0 +1,37 @@
+// Import Variables
+@use "../sass/helpers/variables" as *;
+
+/* - Start Friends Page - */
+.friends-page {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    .contact {
+        left: 10px;
+        top: 10px;
+
+        i {
+            background-color: #eee;
+            cursor: pointer;
+            color: #666;
+
+            &:hover {
+                background-color: $blue-color;
+                color: $white-color;
+            }
+        }
+    }
+
+    .friend {
+        .icons {
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
+
+}
+
+/* - End Friends Page - */

@@ -1,0 +1,113 @@
+// Import Variables
+@use "../sass/helpers/variables" as *;
+
+/* - Start Profile Page - */
+.profile-page {
+    .avatar-box {
+        width: 300px;
+
+        >img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .level {
+            height: 6px;
+            overflow: hidden;
+            width: 70px;
+
+            span {
+                left: 0;
+                top: 0;
+                background-color: $blue-color;
+            }
+        }
+    }
+
+    .info-box {
+        .box {
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eee;
+
+            &:hover {
+                background-color: #f9f9f9;
+            }
+
+            >div {
+                min-width: 250px;
+                padding: 10px 0 0;
+            }
+        }
+
+        h4 {
+            font-weight: normal;
+        }
+
+        .toggle-switch {
+            height: 20px;
+
+            &::before {
+                width: 12px;
+                height: 12px;
+                font-size: 8px;
+            }
+        }
+
+        .toggle-checkbox {
+            &:checked {
+                + {
+                    .toggle-switch {
+                        &::before {
+                            left: 62px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .skills-card {
+        flex-grow: 1;
+
+        ul {
+            li {
+                padding: 15px 0;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #eee;
+                }
+
+                span {
+                    display: inline-flex;
+                    padding: 4px 10px;
+                    background-color: #eee;
+
+                    &:not(:last-child) {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .activities {
+        flex-grow: 2;
+    }
+
+    .activity {
+        &:not(:last-of-type) {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 64px;
+            height: 64px;
+        }
+    }
+}
+
+
+/* - End Profile Page - */

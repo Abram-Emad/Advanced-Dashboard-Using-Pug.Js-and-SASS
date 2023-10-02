@@ -1,0 +1,62 @@
+// Import Variables
+@use "../sass/helpers/variables" as *;
+
+/* - Start Colors and Backgrounds - */
+.c {
+  &-black {
+    color: $black-color;
+  }
+
+  &-white {
+    color: $white-color;
+  }
+
+  &-grey {
+    color: $grey-color;
+  }
+
+  &-red {
+    color: $red-color;
+  }
+
+  &-green {
+    color: $green-color;
+  }
+
+  & &-blue {
+    color: $blue-color;
+  }
+
+  &-orange {
+    color: $orange-color;
+  }
+}
+
+.bg {
+  &-red {
+    background-color: $red-color;
+  }
+
+  &-green {
+    background-color: $green-color;
+  }
+
+  &-blue {
+    background-color: $blue-color;
+  }
+
+  &-orange {
+    background-color: $orange-color;
+  }
+
+  &-white {
+    background-color: $white-color;
+  }
+
+  &-eee {
+    background-color: #eee;
+  }
+
+}
+
+/* - End Colors and Backgrounds - */

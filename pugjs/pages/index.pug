@@ -1,0 +1,385 @@
+include /pugjs/helpers/mixins.pug
+include /pugjs/helpers/variables.pug
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    block pageTitle
+      title #{arrayOfTitles[0]}
+    include /pugjs/includes/links.pug
+  body
+    .page.d-flex
+      include /pugjs/includes/sidebar.pug
+      .content.w-full
+        include /pugjs/includes/head.pug
+        block contentTitle
+          h1.p-relative.mt-20.mr-20.mb-40.ml-40 #{arrayOfTitles[0]}
+        block pageContent
+          .wrapper.d-grid.gap-20.ml-20.mr-20.mb-20
+            // Start Projects Table
+            .welcome.bg-white.rad-10.txt-c-mobile.block-mobile
+              .intro.p-20.d-flex.space-between.bg-eee
+                div
+                  .m-0 Welcome
+                  p.c-grey.mt-5 #{sidebarTitle}
+                img.hide-mobile(src='imgs/welcome.png' alt='')
+              .body.txt-c.d-flex.p-20.mt-20.mb-20.block-mobile
+                div
+                  | #{sidebarTitle} 
+                  span.d-block.c-grey.fs-14.mt-10 Developer
+                div
+                  | 80 
+                  span.d-block.c-grey.fs-14.mt-10 Projects
+                div
+                  | $15000 
+                  span.d-block.c-grey.fs-14.mt-10 Earned
+              a.visit.d-block.fs-14.bg-blue.c-white.w-fit.btn-shape.mt-0.mr-15.mb-15.ml-auto.tr-3ms(href='profile.html') Profile
+            // End Projects Table
+            // Start Quick Draft Widget
+            .quick-draft.p-20.bg-white.rad-10
+              h2.mt-0.mb-10 Quick Draft
+              p.mt-0.mb-20.c-grey.fs-15 Write A Draft For Your Ideas
+              form
+                input.d-block.mb-20.w-full.p-10.b-none.bg-eee.rad-6(type='text' placeholder='Title')
+                textarea.d-block.mb-20.w-full.p-10.b-none.bg-eee.rad-6(placeholder='Your Thought')
+                input.save.d-block.fs-14.bg-blue.c-white.b-none.w-fit.btn-shape.ml-auto.tr-3ms(type='submit' value='Save')
+            // End Quick Draft Widget
+            // Start Targets Widget
+            .targets.p-20.bg-white.rad-10
+              h2.mt-0.mb-10 Yearly Targets
+              p.mt-0.mb-20.c-grey.fs-15 Targets Of The Year
+              .target-row.mb-20.blue.center-flex
+                .icon.center-flex.mr-15
+                  i.fa-solid.fa-dollar-sign.fa-lg.c-blue
+                .details
+                  span.fs-14.c-grey Mony
+                  span.d-block.mt-5.mb-10.fw-bold $20.000
+                  .progress.p-relative
+                    span.bg-blue.blue(style='width: 80%;')
+                      span.bg-blue 80%
+              .target-row.mb-20.center-flex.orange
+                .icon.center-flex.mr-15
+                  i.fa-solid.fa-code.fa-lg.c-orange
+                .details
+                  span.fs-14.c-grey Projects
+                  span.d-block.mt-5.mb-10.fw-bold 24
+                  .progress.p-relative
+                    span.bg-orange.orange(style='width: 55%')
+                      span.bg-orange 55%
+              .target-row.mb-20.center-flex.green
+                .icon.center-flex.mr-15
+                  i.fa-solid.fa-user.fa-lg.c-green
+                .details
+                  span.fs-14.c-grey Team
+                  span.d-block.mt-5.mb-10.fw-bold 12
+                  .progress.p-relative
+                    span.bg-green.green(style='width: 75%')
+                      span.bg-green 75%
+            // End Targets Widget
+            // Start Ticket Widget
+            .tickets.p-20.bg-white.rad-10
+              h2.mt-0.mb-0 Tickets Statistics
+              p.mt-0.mb-20.c-grey.fs-15 Everything About Support Tickets
+              .d-flex.txt-c.gap-20.f-wrap
+                .box.p-20.rad-10.fs-13.c-grey.border-ccc
+                  i.fa-regular.fa-rectangle-list.fa-2x.mb-10.c-orange
+                  span.d-block.c-black.fw-bold.fs-25.mb-5 2500
+                  |               Total
+                .box.p-20.rad-10.fs-13.c-grey.border-ccc
+                  i.fa-solid.fa-spinner.fa-2x.mb-10.c-blue
+                  span.d-block.c-black.fw-bold.fs-25.mb-5 500
+                  |               Pending
+                .box.p-20.rad-10.fs-13.c-grey.border-ccc
+                  i.fa-regular.fa-circle-check.fa-2x.mb-10.c-green
+                  span.d-block.c-black.fw-bold.fs-25.mb-5 1900
+                  |               Closed
+                .box.p-20.rad-10.fs-13.c-grey.border-ccc
+                  i.fa-regular.fa-rectangle-xmark.fa-2x.mb-10.c-red
+                  span.d-block.c-black.fw-bold.fs-25.mb-5 100
+                  |               Deleted
+            // End Ticket Widget
+            // Start Latest News Widget
+            .latest-news.p-20.bg-white.rad-10.txt-c-mobile
+              h2.mt-0.mb-20 Latest News
+              .news-row.d-flex.align-center
+                img.rad-6.m-15.w-100(src='imgs/news-01.png' alt='')
+                .info
+                  h3.fs-16.mt-0-mr-0.mb-5.ml-0 Created SASS Section
+                  p.m-0.fs-14.c-grey New SASS Examples &amp; Tutorials
+                .btn-shape.bg-eee.fs-13.label 3 Days Ago
+              .news-row.d-flex.align-center
+                img.rad-6.m-15.w-100(src='imgs/news-02.png' alt='')
+                .info
+                  h3.fs-16.mt-0-mr-0.mb-5.ml-0 Changed The Design
+                  p.m-0.fs-14.c-grey A Brand New Website Design
+                .btn-shape.bg-eee.fs-13.label 5 Days Ago
+              .news-row.d-flex.align-center
+                img.rad-6.m-15.w-100(src='imgs/news-03.png' alt='')
+                .info
+                  h3.fs-16.mt-0-mr-0.mb-5.ml-0 Team Increased
+                  p.m-0.fs-14.c-grey 3 Developers Joined The Team
+                .btn-shape.bg-eee.fs-13.label 7 Days Ago
+              .news-row.d-flex.align-center
+                img.rad-6.m-15.w-100(src='imgs/news-04.png' alt='')
+                .info
+                  h3.fs-16.mt-0-mr-0.mb-5.ml-0 Added Payment Gateway
+                  p.m-0.fs-14.c-grey Many New Payment Gateways Added
+                .btn-shape.bg-eee.fs-13.label 9 Days Ago
+            // End Latest News Widget
+            // Start Tasks Widget
+            .tasks.p-20.bg-white.rad-10
+              h2.mt-0.mb-20 Latest Taska
+              .task-row.between-flex
+                .info
+                  h3.mt-0.mb-5.fs-15 Record One New Video
+                  p.m-0.c-grey Record Python Create Exe Project
+                i.fa-regular.fa-trash-can.delete.tr-3ms
+              .task-row.between-flex
+                .info
+                  h3.mt-0.mb-5.fs-15 Write Article
+                  p.m-0.c-grey Write Low Level vs High Level Languages
+                i.fa-regular.fa-trash-can.delete.tr-3ms
+              .task-row.between-flex
+                .info
+                  h3.mt-0.mb-5.fs-15 Finish Project
+                  p.m-0.c-grey Publish Academy Programming Project
+                i.fa-regular.fa-trash-can.delete.tr-3ms
+              .task-row.between-flex.done
+                .info
+                  h3.mt-0.mb-5.fs-15 Attend The Meeting
+                  p.m-0.c-grey Attend The Project Business Analysis Meeting
+                i.fa-regular.fa-trash-can.delete.tr-3ms
+              .task-row.between-flex
+                .info
+                  h3.mt-0.mb-5.fs-15 Finish Lesson
+                  p.m-0.c-grey Finish Teaching Flex Box
+                i.fa-regular.fa-trash-can.delete.tr-3ms
+            // End Tasks Widget
+            // Start Top Search Word Widget
+            .search-items.p-20.bg-white.rad-10
+              h2.mt-0.mb-20 Top Search Items
+              .items.head.d-flex.space-between.c-grey.mb-10
+                div Keyword
+                div Search Count
+              .items.d-flex.space-between.pt-15.pb-15
+                span Programming
+                span.bg-eee.fs-13.btn-shape 220
+              .items.d-flex.space-between.pt-15.pb-15
+                span JavaScript
+                span.bg-eee.btn-shape.fs-13 180
+              .items.d-flex.space-between.pt-15.pb-15
+                span PHP
+                span.bg-eee.btn-shape.fs-13 160
+              .items.d-flex.space-between.pt-15.pb-15
+                span Code
+                span.bg-eee.btn-shape.fs-13 145
+              .items.d-flex.space-between.pt-15.pb-15
+                span Design
+                span.bg-eee.btn-shape.fs-13 110
+              .items.d-flex.space-between.pt-15.pb-15
+                span Logic
+                span.bg-eee.btn-shape.fs-13 95
+            // End Top Search Word Widget
+            // Start Latest Uploads Widget
+            .latest-uploads.p-20.bg-white.rad-10
+              h2.mt-0.mb-0 Latest Uploads
+              ul.m-0
+                li.space-between.pb-10.mb-10
+                  .d-flex.align-center
+                    img.mr-10(src='imgs/pdf.svg' alt='')
+                  span.d-block my-file.pdf
+                  span.fs-15.c-grey #{sidebarTitle}
+                li.between-flex.pb-10.mb-10
+                  .d-flex.align-center
+                    img.mr-10(src='imgs/avi.svg' alt='')
+                    div
+                      span.d-block My-Video-File.avi
+                      span.fs-15.c-grey Admin
+                  .bg-eee.btn-shape.fs-13 4.9mb
+                li.between-flex.pb-10.mb-10
+                  .d-flex.align-center
+                    img.mr-10(src='imgs/psd.svg' alt='')
+                    div
+                      span.d-block My-Psd-File.pdf
+                      span.fs-15.c-grey Osama
+                  .bg-eee.btn-shape.fs-13 4.5mb
+                li.between-flex.pb-10.mb-10
+                  .d-flex.align-center
+                    img.mr-10(src='imgs/zip.svg' alt='')
+                    div
+                      span.d-block My-Zip-File.pdf
+                      span.fs-15.c-grey User
+                  .bg-eee.btn-shape.fs-13 8.9mb
+                li.between-flex.pb-10.mb-10
+                  .d-flex.align-center
+                    img.mr-10(src='imgs/dll.svg' alt='')
+                    div
+                      span.d-block My-DLL-File.pdf
+                      span.fs-15.c-grey Admin
+                  .bg-eee.btn-shape.fs-13 4.9mb
+                li.between-flex
+                  .d-flex.align-center
+                    img.mr-10(src='imgs/eps.svg' alt='')
+                    div
+                      span.d-block My-Eps-File.pdf
+                      span.fs-15.c-grey Designer
+                  .bg-eee.btn-shape.fs-13 8.9mb
+            // End Latest Uploads Widget
+            // Start Last Project Progress Widget
+            .last-project.p-20.bg-white.rad-10.p-relative
+              h2.mt-0.mb-20 Last Project Progress
+              ul.m-0.p-relative
+                li.mt-25.d-flex.align-center.done Got The Project
+                li.mt-25.d-flex.align-center.done Started The Project
+                li.mt-25.d-flex.align-center.done The Project About To Finish
+                li.mt-25.d-flex.align-center.current Test The Project
+                li.mt-25.d-flex.align-center Finish The Project &amp; Get Money
+              img.launch-icon.p-absolute.hide-mobile(src='imgs/project.png' alt='')
+            // End Last Project Progress Widget
+            // Start Reminders Widget
+            .reminders.p-20.bg-white.rad-10.p-relative
+              h2.mt-0.mb-25 Reminders
+              ul.m-0
+                li.d-flex.align-center.mt-15
+                  span.key.bg-blue.mr-15.d-block.rad-half
+                  .pl-15.blue
+                    p.fs-14.fw-bold.mt-0.mb-5 Check My Tasks List
+                    span.fs-13.c-grey 23/8/2024 - 10:30pm
+                li.d-flex.align-center.mt-15
+                  span.key.bg-green.mr-15.d-block.rad-half
+                  .pl-15.green
+                    p.fs-14.fw-bold.mt-0.mb-5 Check My Projects
+                    span.fs-13.c-grey 26/10/2022 - 12:00am
+                li.d-flex.align-center.mt-15
+                  span.key.bg-orange.mr-15.d-block.rad-half
+                  .pl-15.orange
+                    p.fs-14.fw-bold.mt-0.mb-5 Call All My Clients
+                    span.fs-13.c-grey 05/11/2022 - 12:00am
+                li.d-flex.align-center.mt-15
+                  span.key.bg-red.mr-15.d-block.rad-half
+                  .pl-15.red
+                    p.fs-14.fw-bold.mt-0.mb-5 Finish The Development Workshop
+                    span.fs-13.c-grey 20/12/2022 - 12:00am
+            // End Reminders Widget
+            // Start Latest Post Widget
+            .latest-post.p-20.bg-white.rad-10.p-relative
+              h2.mt-0.mb-25 Latest Post
+              .top.d-flex.align-center
+                img.avatar.mr-15(src='imgs/avatar.png' alt='')
+                .info
+                  span.d-block.mb-5.fw-bold #{sidebarTitle}
+                  span.c-grey About 3 Hours Ago
+              .post-content.txt-c-mobile.pt-20.pb-20.mt-20.mb-20
+                | You can fool all of the people some of the time, and some of the people all of the time, but you can&apos;t
+                | fool all of the people all of the time.
+              .post-stats.between-flex.c-grey
+                div
+                  i.fa-regular.fa-heart
+                  span 1.8K
+                div
+                  i.fa-regular.fa-comments
+                  span 500
+            // End Latest Post Widget
+            // Start Social Media Stats Widget
+            .social-media.p-20.bg-white.rad-10.p-relative
+              h2.mt-0.mb-25 Social Media Stats
+              .box.twitter.p-15.p-relative.mb-10.between-flex
+                i.fa-brands.fa-twitter.fa-2x.c-white.h-full.center-flex.p-absolute.tr-3ms
+                span 90K Followers
+                a.fs-13.c-white.btn-shape(href='#') Follow
+              .box.facebook.p-15.p-relative.mb-10.between-flex
+                i.fa-brands.fa-facebook-f.fa-2x.c-white.h-full.center-flex.p-absolute.tr-3ms
+                span 2M Like
+                a.fs-13.c-white.btn-shape(href='#') Like
+              .box.youtube.p-15.p-relative.mb-10.between-flex
+                i.fa-brands.fa-youtube.fa-2x.c-white.h-full.center-flex.p-absolute.tr-3ms
+                span 1M Subs
+                a.fs-13.c-white.btn-shape(href='#') Subscribe
+              .box.linkedin.p-15.p-relative.mb-10.between-flex
+                i.fa-brands.fa-linkedin.fa-2x.c-white.h-full.center-flex.p-absolute.tr-3ms
+                span 70K Followers
+                a.fs-13.c-white.btn-shape(href='#') Follow
+            // End Social Media Stats Widget
+          // Start Projects Table
+          .projects.p-20.bg-white.rad-10.m-20
+            h2.mt-0.mb-20 Projects
+            .responsive-table
+              table.fs-15.w-full
+                thead
+                  tr
+                    td Name
+                    td Finish Date
+                    td Client
+                    td Price
+                    td Team
+                    td Status
+                tbody
+                  tr
+                    td Ministry Wikipedia
+                    td 10 May 2022
+                    td Ministry
+                    td $5300
+                    td
+                      img(src='imgs/team-01.png' alt='')
+                      img(src='imgs/team-02.png' alt='')
+                      img(src='imgs/team-03.png' alt='')
+                      img(src='imgs/team-05.png' alt='')
+                    td
+                      span.label.btn-shape.bg-orange.c-white Pending
+                  tr
+                    td Elzero Shop
+                    td 12 Oct 2021
+                    td Elzero Company
+                    td $1500
+                    td
+                      img(src='imgs/team-01.png' alt='')
+                      img(src='imgs/team-02.png' alt='')
+                      img(src='imgs/team-05.png' alt='')
+                    td
+                      span.label.btn-shape.bg-blue.c-white In Progress
+                  tr
+                    td Bouba App
+                    td 05 Sep 2021
+                    td Bouba
+                    td $800
+                    td
+                      img(src='imgs/team-02.png' alt='')
+                      img(src='imgs/team-03.png' alt='')
+                    td
+                      span.label.btn-shape.bg-green.c-white Completed
+                  tr
+                    td Mahmoud Website
+                    td 22 May 2021
+                    td Mahmoud
+                    td $600
+                    td
+                      img(src='imgs/team-01.png' alt='')
+                      img(src='imgs/team-02.png' alt='')
+                    td
+                      span.label.btn-shape.bg-green.c-white Completed
+                  tr
+                    td Sayed Website
+                    td 24 May 2021
+                    td Sayed
+                    td $300
+                    td
+                      img(src='imgs/team-01.png' alt='')
+                      img(src='imgs/team-03.png' alt='')
+                    td
+                      span.label.btn-shape.bg-red.c-white Rejected
+                  tr
+                    td Arena Application
+                    td 01 Mar 2021
+                    td Arena Company
+                    td $2600
+                    td
+                      img(src='imgs/team-01.png' alt='')
+                      img(src='imgs/team-02.png' alt='')
+                      img(src='imgs/team-03.png' alt='')
+                      img(src='imgs/team-04.png' alt='')
+                    td
+                      span.label.btn-shape.bg-green.c-white Completed
+          // End Projects Table
+    script(src='js/main.js')

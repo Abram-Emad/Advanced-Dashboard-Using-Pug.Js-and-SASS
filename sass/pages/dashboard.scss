@@ -1,0 +1,536 @@
+// Import Variables
+@use "../sass/helpers/variables" as *;
+
+/* - Start The Style Of The Body Of The Main Page - */
+
+/* - Start Sidebar - */
+.sidebar {
+  width: 250px;
+  box-shadow: 0 0 10px #ddd;
+
+  &>h3 {
+    margin-bottom: 50px;
+
+    &::after,
+    &::before {
+      content: "";
+      background-color: $black-color;
+      transform: translateX(-50%);
+      position: absolute;
+      left: 50%;
+    }
+
+    &::before {
+      width: 80px;
+      height: 2px;
+      bottom: -20px;
+    }
+
+    &::after {
+      bottom: -29px;
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      border: 4px solid $white-color;
+    }
+  }
+
+  ul li a {
+
+    &:hover,
+    &.active {
+      background-color: #f6f6f6;
+    }
+  }
+}
+
+
+/* - End Sidebar - */
+
+/* - Start Content - */
+.content {
+  overflow: hidden;
+}
+
+.head {
+  .search {
+    &::before {
+      font-family: var(--fa-style-family-classic);
+      content: "\f002";
+      font-weight: 900;
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: $grey-color;
+    }
+
+    input {
+      width: 160px;
+      transition: width 0.3s;
+
+      &:focus {
+        width: 200px;
+
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .icons {
+    .notification::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: $red-color;
+      border-radius: 50%;
+      right: -5px;
+      top: -5px;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.page {
+  h1 {
+
+    &::before,
+    &::after {
+      content: '';
+      height: 3px;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+
+    &::before {
+      background-color: $white-color;
+      width: 120px;
+    }
+
+    &::after {
+      background-color: $black-color;
+      width: 40px;
+    }
+  }
+}
+
+.wrapper {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+
+/* - End Content - */
+
+/* - Start Welcome Widget - */
+.welcome {
+  overflow: hidden;
+
+  .intro img {
+    width: 200px;
+    margin-bottom: -10px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border: 2px solid $white-color;
+    box-shadow: 0 0 50px #ddd;
+    margin-top: -32px;
+    margin-left: 20px;
+    border-radius: 50%;
+    padding: 20px;
+  }
+
+  .body {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+
+    >div {
+      flex: 1;
+    }
+  }
+
+  .visit {
+    &:hover {
+      background-color: $blue-alt-color;
+    }
+  }
+
+}
+
+/* - Start Quick Draft Widget - */
+.quick-draft {
+  textarea {
+    resize: none;
+    min-height: 180px;
+  }
+
+  .save {
+    cursor: pointer;
+
+    &:hover {
+      background-color: $blue-alt-color;
+    }
+  }
+}
+
+/* - End Quick Draft Widget - */
+
+/* - Start Targets - */
+.targets {
+  .target-row .icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .details {
+    flex: 1;
+
+    .progress {
+      height: 4px;
+
+      >span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+
+        span {
+          position: absolute;
+          bottom: 16px;
+          right: -16px;
+          color: $white-color;
+          padding: 2px 5px;
+          border-radius: 6px;
+          font-size: 13px;
+
+          &::after {
+            content: "";
+            border: 5px solid transparent;
+            position: absolute;
+            bottom: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+
+      >.blue span::after {
+        border-top-color: $blue-color;
+      }
+
+      >.orange span::after {
+        border-top-color: $orange-color;
+      }
+
+      >.green span::after {
+        border-top-color: $green-color;
+      }
+    }
+  }
+}
+
+.blue .icon,
+.blue .progress {
+  background-color: rgb(0 117 255 / 20%);
+}
+
+.orange .icon,
+.orange .progress {
+  background-color: rgb(245 158 11 / 20%);
+}
+
+.green .icon,
+.green .progress {
+  background-color: rgb(34 197 94 / 20%);
+}
+
+/* - End Targets - */
+
+/* - Start Tickets - */
+.tickets {
+  .box {
+    width: calc(50% - 10px);
+  }
+}
+
+/* - End Tickets - */
+
+/* - Start Latest News - */
+.latest-news {
+  .news-row:not(:last-of-type) {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .info {
+    flex-grow: 1;
+  }
+}
+
+/* - End Latest News - */
+
+/* - Start Tasks - */
+.tasks {
+  .task-row:not(:last-of-type) {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .info {
+    flex-grow: 1;
+  }
+
+  .done {
+    opacity: 0.3;
+
+    h3,
+    p {
+      text-decoration: line-through;
+    }
+  }
+
+  .delete {
+    cursor: pointer;
+
+    &:hover {
+      color: $red-color;
+    }
+  }
+}
+
+/* - End Tasks - */
+
+/* - Start Latest Uploads - */
+.latest-uploads ul li {
+  &:not(:last-child) {
+    border-bottom: 1px solid #eee;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* - End Latest Uploads - */
+
+/* - Start Last Project - */
+.last-project {
+  ul {
+    &::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      width: 2px;
+      height: 100%;
+      background-color: $blue-color;
+    }
+
+    li {
+      &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        display: block;
+        border-radius: 50%;
+        background-color: $white-color;
+        border: 2px solid $white-color;
+        outline: 2px solid $blue-color;
+        margin-right: 15px;
+        z-index: 1;
+      }
+
+      &.done::before {
+        background-color: $blue-color;
+      }
+
+      &.current::before {
+        animation: change-color 0.8s infinite alternate;
+      }
+    }
+  }
+
+  .launch-icon {
+    width: 160px;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+  }
+}
+
+/* - End Last Project - */
+
+/* - Start Reminders - */
+.reminders {
+  ul li {
+    .key {
+      width: 15px;
+      height: 15px;
+    }
+
+    >.blue {
+      border-left: 2px solid $blue-color;
+    }
+
+    >.green {
+      border-left: 2px solid $green-color;
+    }
+
+    >.orange {
+      border-left: 2px solid $orange-color;
+    }
+
+    >.red {
+      border-left: 2px solid $red-color;
+    }
+
+  }
+}
+
+/* - End Reminders - */
+
+/* - Start Latest Post - */
+.latest-post {
+  .avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .post-content {
+    text-transform: capitalize;
+    line-height: 1.8;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    min-height: 140px;
+  }
+}
+
+/* - End Latest Post - */
+
+/* - Start Social Media - */
+.social-media {
+  .box {
+    padding-left: 70px;
+
+    i {
+      left: 0;
+      top: 0;
+      width: 52px;
+
+      &:hover {
+        transform: rotate(5deg);
+      }
+    }
+  }
+
+  .twitter {
+    background-color: rgb(29 161 242 / 20%);
+    color: #1da1f2;
+
+    i,
+    a {
+      background-color: #1da1f2;
+    }
+  }
+
+  .facebook {
+    background-color: rgb(24 119 242 / 20%);
+    color: #1da1f2;
+
+    i,
+    a {
+      background-color: #1877f2;
+    }
+  }
+
+  .youtube {
+    background-color: rgb(255 0 0 / 20%);
+    color: #ff0000;
+
+    i,
+    a {
+      background-color: #ff0000;
+    }
+  }
+
+  .linkedin {
+    background-color: rgb(0 119 181 / 20%);
+    color: #0077b5;
+
+    i,
+    a {
+      background-color: #0077b5;
+    }
+  }
+
+}
+
+/* - End Social Media - */
+
+/* - Start Projects Table - */
+.projects {
+  .responsive-table {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 1000px;
+    border-spacing: 0;
+
+    td {
+      padding: 15px;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      padding: 2px;
+      background-color: white;
+    }
+
+    img:not(:first-child) {
+      margin-left: -20px;
+    }
+
+    .label {
+      font-size: 13px;
+    }
+  }
+
+  thead td {
+    background-color: $white-color;
+    font-weight: bold;
+  }
+
+  tbody {
+    td {
+      border-bottom: 1px solid #eee;
+      border-left: 1px solid #eee;
+      transition: 0.3s;
+    }
+
+    tr td:last-child {
+      border-right: 1px solid #eee;
+    }
+
+    tr:hover td {
+      background-color: #faf7f7;
+    }
+  }
+}
+
+/* - End Projects Table - */
+
+/* - End The Style Of The Body Of The Main Page - */

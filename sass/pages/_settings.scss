@@ -1,0 +1,247 @@
+// Import Variables
+@use "../sass/helpers/variables" as *;
+
+/* - Start Settings Page - */
+.settings-page {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+
+    .close-message {
+        resize: none;
+        min-height: 150px;
+    }
+
+    .email {
+        display: inline-flex;
+        width: calc(100% - 80px);
+    }
+
+    .sec-box {
+        &:not(:last-of-type) {
+            border-bottom: 1px solid #eee;
+        }
+
+        .button {
+            &:hover {
+                background-color: $blue-alt-color;
+            }
+        }
+    }
+
+    .social-boxes {
+        i {
+            width: 40px;
+            height: 40px;
+            background-color: #f6f6f6;
+            border-right: none;
+            border-radius: 6px 0 0 6px;
+        }
+
+        input {
+            height: 40px;
+            background-color: #f6f6f6;
+
+            border-radius: 0 6px 6px 0;
+        }
+
+        >div {
+            &:focus-within {
+                i {
+                    color: $black-color;
+                }
+            }
+        }
+    }
+
+    &:disabled {
+        cursor: no-drop;
+        background-color: #f0f4f8;
+        color: #bbb;
+    }
+}
+
+.widgets-control {
+    .control {
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+
+            &:checked {
+                + {
+                    label {
+                        &::after {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+
+        label {
+            cursor: pointer;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                margin-top: -9px;
+                border-radius: 4px;
+                content: "";
+                width: 14px;
+                height: 14px;
+                border: 2px solid $grey-color;
+            }
+
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                margin-top: -9px;
+                border-radius: 4px;
+                font-family: var(--fa-style-family-classic);
+                content: "\f00c";
+                font-weight: 900;
+                background-color: $blue-color;
+                color: $white-color;
+                font-size: 12px;
+                width: 18px;
+                height: 18px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform: scale(0) rotate(360deg);
+                transition: 0.3s;
+            }
+
+            &:hover {
+                &::before {
+                    border-color: $blue-alt-color;
+                }
+            }
+        }
+    }
+}
+
+.backup-control {
+    input[type="radio"] {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .date {
+        label {
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -11px;
+                width: 18px;
+                height: 18px;
+                border: 2px solid $grey-color;
+                border-radius: 50%;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 5px;
+                top: 5px;
+                width: 12px;
+                height: 12px;
+                background: $blue-color;
+                border-radius: 50%;
+                transition: 0.3s;
+                transform: scale(0);
+            }
+        }
+
+        input[type="radio"] {
+            &:checked {
+                + {
+                    label {
+                        &::before {
+                            border-color: $blue-color;
+                        }
+
+                        &::after {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .servers {
+        border-top: 1px solid #eee;
+
+        .server {
+            border: 2px solid #eee;
+
+            label {
+                cursor: pointer;
+            }
+        }
+
+        input[type="radio"] {
+            &:checked {
+                + {
+                    .server {
+                        border-color: $blue-color;
+                        color: $blue-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.toggle-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+
+    &:checked {
+        + {
+            .toggle-switch {
+                background-color: $blue-color;
+
+                &::before {
+                    content: "\f00c";
+                    left: 50px;
+                    color: $blue-color;
+                }
+            }
+        }
+    }
+}
+
+.toggle-switch {
+    background-color: #ccc;
+    width: 78px;
+    height: 32px;
+    border-radius: 16px;
+    cursor: pointer;
+
+    &::before {
+        font-family: var(--fa-style-family-classic);
+        content: "\f00d";
+        font-weight: 900;
+        background-color: $white-color;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        border-radius: 50%;
+        top: 4px;
+        left: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #aaa;
+        transition: 0.3s;
+    }
+}
+
+/* - End Settings Page - */

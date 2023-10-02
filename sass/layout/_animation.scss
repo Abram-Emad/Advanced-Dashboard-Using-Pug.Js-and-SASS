@@ -1,0 +1,28 @@
+// Import Mixins
+@use "../sass/mixins/mixin-for-animations" as *;
+
+// Import Variables
+@use "../sass/helpers/variables" as *;
+
+/* - Start Animation - */
+@include mixinAnimation(change-color) {
+  from {
+    background-color: $blue-color;
+  }
+
+  to {
+    background-color: white;
+  }
+}
+
+@include mixinAnimation(go-up) {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+/* - End Animation - */

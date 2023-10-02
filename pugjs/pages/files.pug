@@ -1,0 +1,63 @@
+//- Start Page
+extends index
+
+//- Change Page Title
+block pageTitle    
+    title #{arrayOfTitles[6]}
+
+//- Change Page Content
+block contentTitle
+    h1.p-relative.mt-20.mr-20.mb-40.ml-40 #{arrayOfTitles[6]}
+
+block pageContent
+    .files-page.d-flex.m-20.gap-20
+        .files-stats.p-20.bg-white.rad-10
+            h2.mt-0.mb-15.txt-c-mobile Files Statistics
+            .d-flex.align-center.border-eee.p-10.rad-6.mb-15.fs-13
+                i.fa-regular.fa-file-pdf.fa-lg.blue.center-flex.c-blue.icon
+                .info
+                    span PDF Files
+                    span.c-grey.d-block.mt-5 130
+                .size.c-grey 6.5GB
+            .d-flex.align-center.border-eee.p-10.rad-6.mb-15.fs-13
+                i.fa-regular.fa-images.fa-lg.green.center-flex.c-green.icon
+                .info
+                    span Images
+                    span.c-grey.d-block.mt-5 115 Files
+                .size.c-grey 3.5GB
+            .d-flex.align-center.border-eee.p-10.rad-6.mb-15.fs-13
+                i.fa-regular.fa-file-word.fa-lg.red.center-flex.c-red.icon
+                .info
+                    span Word Files
+                    span.c-grey.d-block.mt-5 110 Files
+                .size.c-grey 3.2GB
+            .d-flex.align-center.border-eee.p-10.rad-6.fs-13
+                i.fa-solid.fa-file-csv.fa-lg.orange.center-flex.c-orange.icon
+                .info
+                    span CSV Files
+                    span.c-grey.d-block.mt-5 99 Files
+                .size.c-grey 2.9GB
+            a.upload.bg-blue.c-white.fs-13.rad-6.d-block.w-fit(href='#')
+             i.fa-solid.fa-angles-up.mr-10 Upload
+        .files-content.d-grid.gap-20 
+            +filesPageContent("imgs/pdf.svg", "random-file.pdf", "Ella Smith", "15/03/2023", "2.1MB")
+            +filesPageContent("imgs/avi.svg", "awesome-file.avi", "Sophie Johnson", "01/08/2023", "1.8MB")
+            +filesPageContent("imgs/dll.svg", "cool-file.dll", "Oliver Davis", "04/11/2023", "3.7MB")
+            +filesPageContent("imgs/eps.svg", "new-file.eps", "Emily Wilson", "22/09/2023", "4.5MB")
+            +filesPageContent("imgs/png.svg", "random-file.png", "Jacob Taylor", "11/05/2023", "2.9MB")
+            +filesPageContent("imgs/psd.svg", "awesome-file.psd", "Isabella Martinez", "10/07/2023", "1.6MB")
+            +filesPageContent("imgs/sql.svg", "cool-file.sql", "Michael Anderson", "28/12/2023", "3.3MB")
+            +filesPageContent("imgs/txt.svg", "new-file.txt", "Emma Thomas", "19/10/2023", "4.2MB")
+            +filesPageContent("imgs/zip.svg", "random-file.zip", "William Wilson", "13/04/2023", "2.3MB")
+            +filesPageContent("imgs/eps.svg", "awesome-file.eps", "Mia Rodriguez", "06/09/2023", "1.9MB")
+            +filesPageContent("imgs/dll.svg", "cool-file.dll", "James Brown", "21/11/2023", "3.8MB")
+            +filesPageContent("imgs/psd.svg", "new-file.psd", "Sophia Johnson", "08/07/2023", "4.7MB")
+            +filesPageContent("imgs/png.svg", "random-file.png", "Oliver Davis", "25/01/2023", "2.6MB")
+            +filesPageContent("imgs/txt.svg", "awesome-file.txt", "Ava Thompson", "02/10/2023", "1.4MB")
+            +filesPageContent("imgs/zip.svg", "cool-file.zip", "William Wilson", "16/05/2023", "3.1MB")
+            +filesPageContent("imgs/sql.svg", "new-file.sql", "Sophie Anderson", "09/08/2023", "4.9MB")
+            +filesPageContent("imgs/png.svg", "random-file.png", "Lucas Thomas", "17/04/2023", "2.5MB")
+            +filesPageContent("imgs/png.svg", "awesome-file.png", "Amelia Martinez", "05/07/2023", "1.7MB")
+            +filesPageContent("imgs/txt.svg", "cool-file.txt", "Liam Johnson", "14/12/2023", "3.5MB")
+            +filesPageContent("imgs/pdf.svg", "new-file.pdf", "Olivia Brown", "23/09/2023", "4.4MB")
+//- End Page

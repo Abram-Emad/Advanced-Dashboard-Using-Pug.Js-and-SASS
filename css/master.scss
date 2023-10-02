@@ -1,0 +1,33 @@
+// Import Global Roots
+@use "../sass/layout/global-root" as *;
+
+// Import Settings Page Style
+@use "../sass/pages/settings" as *;
+
+// Import Dashboard Page Style
+@use "../sass/pages/dashboard" as *;
+
+// Import Profile Page Style
+@use "../sass/pages/profile" as *;
+
+// Import Projects Page Style
+@use "../sass/pages/projects" as *;
+
+// Import Courses Page Style
+@use "../sass/pages/courses" as *;
+
+// Import Friends Page Style
+@use "../sass/pages/friends" as *;
+
+// Import Files Page Style
+@use "../sass/pages/files" as *;
+
+// Import Plans Page Style
+@use "../sass/pages/plans" as *;
+
+// Import Responsive Design
+@use "../sass/layout/responsive-design" as *;
+
+// Import Animations
+@use "../sass/layout/animation" as *;
+

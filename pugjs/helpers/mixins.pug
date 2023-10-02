@@ -1,0 +1,158 @@
+//- Projects Page
+mixin projectsPageContent(title, des, date, avatar1, avatar2, avatar3, avatar4, avatar5, tag1, tag2, tag3, tag4, color, width, cost)
+    .project.bg-white.p-20.rad-6.p-relative 
+        span.date.fs-13.c-grey.p-absolute #{date}
+        h4.m-0 #{title}
+        p.c-grey.mt-10.mb-10.fs-14 #{des}
+        .team.p-relative
+            a.p-absolute(href="#"): img.rad-half(src=avatar1, alt="")
+            a.p-absolute(href="#"): img.rad-half(src=avatar2, alt="")
+            a.p-absolute(href="#"): img.rad-half(src=avatar3, alt="")
+            if avatar4
+                a.p-absolute(href="#"): img.rad-half(src=avatar4, alt="")
+            if avatar5 
+                a.p-absolute(href="#"): img.rad-half(src=avatar5, alt="")
+        .do.d-flex.mt-15.pt-15
+            span.fs-13.rad-6.bg-eee.ml-5.w-fit.p-5 #{tag1}
+            if tag2
+                span.fs-13.rad-6.bg-eee.ml-5.w-fit.p-5 #{tag2}
+            if tag3
+                span.fs-13.rad-6.bg-eee.ml-5.w-fit.p-5 #{tag3}
+            if tag4
+                span.fs-13.rad-6.bg-eee.ml-5.w-fit.p-5 #{tag4}
+        .info.between-flex.mt-15.pt-15
+            .prog.bg-eee.rad-6.p-relative
+                span.rad-6.h-full.p-absolute(class=color, style=width)
+            .fs-14.c-grey 
+                i.fa-solid.fa-dollar-sign
+                | #{cost}
+
+//- Courses Page
+mixin coursesPageContent(avatar, cover, title, paragraph, watchers, cost)
+    .course.bg-white.d-grid.rad-6.p-relative 
+        img.cover(src=cover, alt="")
+        img.instructor.p-absolute.rad-half(src=avatar, alt="4")
+        .p-20
+            h4.m-0 #{title}
+            p.description.c-grey.mt-15.fs-14 #{paragraph}
+        .info.p-15.p-relative.between-flex.fs-13
+            span.title.bg-blue.c-white.btn-shape.p-absolute.fs-13 Course Info
+            span.c-grey
+                i.fa-regular.fa-user
+                | #{watchers}
+            span.c-grey
+                i.fa-solid.fa-dollar-sign
+                | #{cost}
+
+//- Friends Page
+mixin friendsPageContent(avatar, name, jobDes, friendsNum, ProjectsNum, articlessNum, date, profileLink)
+    .friend.bg-white.rad-6.p-20.p-relative
+        .contact.p-absolute
+            i.fa-solid.fa-phone.p-10.rad-half.fs-13.tr-3ms.mr-5
+            i.fa-regular.fa-envelope.p-10.rad-half.fs-13.tr-3ms
+        .txt-c 
+            img.rad-half.mt-10.mb-10.w-100.h-100(src=avatar, alt="4")
+            h4.m-0 #{name}
+            p.c-grey.fs-13.mt-5.mb-0 #{jobDes}
+        .icons.fs-13.p-relative.mt-15.mb-15.pb-15.pt-15
+            .mb-10
+                i.fa-regular.fa-face-smile.fa-fw
+                span #{friendsNum}
+            .mb-10 
+                i.fa-solid.fa-code-commit.fa-fw
+                span #{ProjectsNum}
+            div 
+                i.fa-regular.fa-newspaper.fa-fw
+                span #{articlessNum}
+        .infol.between-flex.fs-13 
+            span.c-grey #{date}
+            div 
+                a.bg-blue.c-white.btn-shape.mr-5(href=profileLink) Profile
+                a.bg-red.c-white.btn-shape Remove
+
+//- Files Page
+mixin filesPageContent(icon, fileName, upName, date, size)
+    .file.bg-white.p-10.rad-10
+        i.fa-solid.fa-download.c-grey.p-absolute
+        .icon.txt-c
+            img.mt-15.mb-15(src=icon, alt="4")
+        .txt-c.mb-10.fs-14 #{fileName}
+        p.c-grey.fs-13 #{upName}
+        .info.between-flex.mt-10.pt-10.fs-13.c-grey 
+            span #{date} 
+            span #{size}
+
+//- Plans Page
+mixin plansPageContent(title, price, fyesorno, syesorno, color, bgcolor)
+    .plan.bg-white.p-20(class=color)
+        .top.txt-c.p-20(class=bgcolor)
+            h2.m-0.c-white #{title}
+            .price.c-white.p-relative.m-auto.w-fit
+                span.p-absolute.fs-25 $
+                | #{price}
+        ul
+            li
+                i.fa-solid.fa-check.fa-fw.yes
+                span Access All Text Lessons
+                i.fa-solid.fa-circle-info.help
+            li
+                i.fa-solid.fa-check.fa-fw.yes
+                span Access All Videos Lessons
+                i.fa-solid.fa-circle-info.help
+            li
+                i.fa-solid.fa-check.fa-fw.yes
+                span Appear On Leaderboard
+                i.fa-solid.fa-circle-info.help
+            if fyesorno 
+                li
+                    i.fa-solid.fa-check.fa-fw.yes
+                    span Browse Content Without Ads
+                    i.fa-solid.fa-circle-info.help
+                li
+                    i.fa-solid.fa-check.fa-fw.yes
+                    span Access All Assignments
+                    i.fa-solid.fa-circle-info.help
+                li
+                    i.fa-solid.fa-check.fa-fw.yes
+                    span Get Daily Prizes
+                    i.fa-solid.fa-circle-info.help
+                li
+                    i.fa-solid.fa-check.fa-fw.yes
+                    span Earn Certificate
+                    i.fa-solid.fa-circle-info.help
+            else 
+                li
+                    i.fa-solid.fa-xmark.fa-fw
+                    span Browse Content Without Ads
+                    i.fa-solid.fa-circle-info.help
+                li
+                    i.fa-solid.fa-xmark.fa-fw
+                    span Access All Assignments
+                    i.fa-solid.fa-circle-info.help
+                li
+                    i.fa-solid.fa-xmark.fa-fw
+                    span Get Daily Prizes
+                    i.fa-solid.fa-circle-info.help
+                li
+                    i.fa-solid.fa-xmark.fa-fw
+                    span Earn Certificate
+                    i.fa-solid.fa-circle-info.help
+            if syesorno 
+                li
+                    i.fa-solid.fa-check.fa-fw.yes
+                    span 1 GB Space For Hosting Files
+                    i.fa-solid.fa-circle-info.help
+                li
+                    i.fa-solid.fa-check.fa-fw.yes
+                    span Access Badge System
+                    i.fa-solid.fa-circle-info.help
+            else 
+                li
+                    i.fa-solid.fa-xmark.fa-fw
+                    span 1 GB Space For Hosting Files
+                    i.fa-solid.fa-circle-info.help
+                li
+                    i.fa-solid.fa-xmark.fa-fw
+                    span Access Badge System
+                    i.fa-solid.fa-circle-info.help
+        a.btn-shape.c-white.d-block.w-fit(class=bgcolor, href='#') Join

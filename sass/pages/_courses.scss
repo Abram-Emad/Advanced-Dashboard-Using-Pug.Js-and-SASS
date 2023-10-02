@@ -1,0 +1,39 @@
+// Import Variables
+@use "../sass/helpers/variables" as *;
+
+/* - Start Courses Page - */
+.courses-page {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    .course {
+        overflow: hidden;
+
+        .cover {
+            max-width: 100%;
+        }
+
+        .instructor {
+            width: 64px;
+            height: 64px;
+            left: 20px;
+            top: 20px;
+            border: 2px solid $white-color;
+        }
+
+        .description {
+            line-height: 1.6;
+        }
+
+        .info {
+            border-top: 1px solid #eee;
+
+            .title {
+                top: -13px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+/* - End Courses Page - */

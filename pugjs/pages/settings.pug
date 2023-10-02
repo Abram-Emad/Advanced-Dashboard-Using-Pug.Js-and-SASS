@@ -1,0 +1,137 @@
+//- Start Page
+extends index
+
+//- Change Page Title
+block pageTitle    
+    title #{arrayOfTitles[1]}
+
+//- Change Page Content
+block contentTitle
+    h1.p-relative.mt-20.mr-20.mb-40.ml-40 #{arrayOfTitles[1]}
+
+block pageContent
+    .settings-page.m-20.d-grid.gap-20
+      // Start Settings Box
+      .p-20.bg-white.rad-10
+        h2.mt-0.mb-10 Site Control
+        p.mt-0.mb-20.c-grey.fs-15 Control The Website If There Is Maintenance
+        .mb-15.between-flex
+          div
+            span Website Control
+            p.c-grey.mt-5.mb-0.fs-13 Open/Close Website And Type The Reason
+          div
+            label
+              input.toggle-checkbox(type='checkbox' checked='')
+              .toggle-switch.p-relative.tr-3ms
+        textarea.close-message.p-10.rad-6.d-block.w-full.border-ccc(placeholder='Close Message Content')
+      // End Settings Box
+      // Start Settings Box
+      .p-20.bg-white.rad-10
+        h2.mt-0.mb-10 General Info
+        p.mt-0.mb-20.c-grey.fs-15 General Information About Your Account
+        .mb-15
+          label.fs-14.c-grey.d-block.mb-10(for='first') First Name
+          input#first.b-none.border-ccc.p-10.rad-6.d-block.w-full(type='text' placeholder='First Name')
+        .mb-15
+          label.fs-14.c-grey.d-block.mb-5(for='last') Last Name
+          input#last.b-none.border-ccc.p-10.rad-6.d-block.w-full(type='text' placeholder='Last Name')
+        div
+          label.fs-14.c-grey.d-block.mb-5(for='email') Email
+          input#email.email.b-none.border-ccc.p-10.rad-6.w-full.mr-10(type='email' value='o@nn.sa' disabled='')
+          a.button.bg-blue.c-white.btn-shape.tr-3ms.fs-14(href='#') Change
+      // End Settings Box
+      // Start Settings Box
+      .p-20.bg-white.rad-10
+        h2.mt-0.mb-10 Security Info
+        p.mt-0.mb-20.c-grey.fs-15 Security Information About Your Account
+        .sec-box.mb-15.between-flex.pb-15
+          div
+            span Password
+            p.c-grey.mt-5.mb-0.fs-13 Last Change On 25/10/2021
+          a.button.bg-blue.c-white.btn-shape.tr-3ms(href='#') Change
+        .sec-box.mb-15.between-flex.pb-15
+          div
+            span Two-Factor Authentication
+            p.c-grey.mt-5.mb-0.fs-13 Enable/Disable The Feature
+          label
+            input.toggle-checkbox(type='checkbox' checked='')
+            .toggle-switch.p-relative.tr-3ms
+        .sec-box.between-flex.pb-15
+          div
+            span Devices
+            p.c-grey.mt-5.mb-0.fs-13 Check The Login Devices List
+          a.bg-eee.c-black.btn-shape.tr-3ms(href='#') Devices
+      // End Settings Box
+      // Start Settings Box
+      .social-boxes.p-20.bg-white.rad-10
+        h2.mt-0.mb-10 Social Info
+        p.mt-0.mb-20.c-grey.fs-15 Social Media Information
+        .d-flex.align-center.mb-15
+          i.fa-brands.fa-twitter.center-flex.c-grey.border-ddd.tr-3ms
+          input.w-full.border-ddd.pl-10(type='text' placeholder='Twitter Username')
+        .d-flex.align-center.mb-15
+          i.fa-brands.fa-facebook-f.center-flex.c-grey.border-ddd.tr-3ms
+          input.w-full.border-ddd.pl-10(type='text' placeholder='Facebook Username')
+        .d-flex.align-center.mb-15
+          i.fa-brands.fa-linkedin.center-flex.c-grey.border-ddd.tr-3ms
+          input.w-full.border-ddd.pl-10(type='text' placeholder='Linkedin Username')
+        .d-flex.align-center
+          i.fa-brands.fa-youtube.center-flex.c-grey.border-ddd.tr-3ms
+          input.w-full.border-ddd.pl-10(type='text' placeholder='Youtube Username')
+      // End Settings Box
+      // Start Settings Box
+      .widgets-control.p-20.bg-white.rad-10
+        h2.mt-0.mb-10 Widgets Control
+        p.mt-0.mb-20.c-grey.fs-15 Show/Hide Widgets
+        .control.d-flex.align-center.mb-15
+          input#one(type='checkbox' checked='')
+          label.pl-30.p-relative(for='one') Quick Draft
+        .control.d-flex.align-center.mb-15
+          input#two(type='checkbox' checked='')
+          label.pl-30.p-relative(for='two') Yearly Targets
+        .control.d-flex.align-center.mb-15
+          input#three(type='checkbox' checked='')
+          label.pl-30.p-relative(for='three') Tickets Statistics
+        .control.d-flex.align-center.mb-15
+          input#four(type='checkbox' checked='')
+          label.pl-30.p-relative(for='four') Latest News
+        .control.d-flex.align-center.mb-15
+          input#five(type='checkbox')
+          label.pl-30.p-relative(for='five') Latest Tasks
+        .control.d-flex.align-center.mb-15
+          input#six(type='checkbox')
+          label.pl-30.p-relative(for='six') Top Search Items
+      // End Settings Box
+      // Start Settings Box
+      .backup-control.p-20.bg-white.rad-10
+        h2.mt-0.mb-10 Backup Manager
+        p.mt-0.mb-20.c-grey.fs-15 Control Backup Time And Location
+        .date.d-flex.align-center.mb-15
+          input#daily(type='radio' name='time' checked='')
+          label.p-relative.pl-30(for='daily') Daily
+        .date.d-flex.align-center.mb-15
+          input#weekly(type='radio' name='time')
+          label.p-relative.pl-30(for='weekly') Weekly
+        .date.d-flex.align-center.mb-15
+          input#monthly(type='radio' name='time')
+          label.p-relative.pl-30(for='monthly') Monthly
+        .servers.d-flex.align-center.txt-c.pt-20
+          input#server-one(type='radio' name='servers')
+          .server.mb-15.rad-10.w-full.p-relative
+            label.d-block.m-15(for='server-one')
+              i.fa-solid.fa-server.d-block.mb-10
+              | Megaman
+          input#server-two(type='radio' name='servers' checked='')
+          .server.mb-15.rad-10.w-full.p-relative
+            label.d-block.m-15(for='server-two')
+              i.fa-solid.fa-server.d-block.mb-10
+              | Zero
+          input#server-three(type='radio' name='servers')
+          .server.mb-15.rad-10.w-full.p-relative
+            label.d-block.m-15(for='server-three')
+              i.fa-solid.fa-server.d-block.mb-10
+              | Sigma
+      // End Settings Box
+
+
+//- End Page

@@ -1,0 +1,24 @@
+//- Start Page
+extends index
+
+//- Change Page Title
+block pageTitle    
+    title #{arrayOfTitles[4]}
+
+//- Change Page Content
+block contentTitle
+    h1.p-relative.mt-20.mr-20.mb-40.ml-40 #{arrayOfTitles[4]}
+
+block pageContent
+    .courses-page.d-grid.m-20.gap-20
+        +coursesPageContent("imgs/team-01.png", "imgs/course-01.jpg", "Mastering Web Design", "Master The Art Of Web Designing And Mocking, Prototyping And Creating Web Design Architecture Master The Art Of Web Designing And Mocking, Prototyping And Creating Web Design Architecture" , "980", "165")
+        +coursesPageContent("imgs/team-02.png", "imgs/course-02.jpg", "Data Structure And Algorithms", "Master The Art Of Data Strcuture And Famous Algorithms Like Sorting, Dividing And Conquering" , "1437", "89")
+        +coursesPageContent("imgs/team-03.png", "imgs/course-03.jpg", "Responsive Web Design", "Mastering Responsive Web Design And Media Queries And Know Everything About Breakpoints" , "1180", "456")
+        +coursesPageContent("imgs/team-04.png", "imgs/course-04.jpg", "Mastering Python", "Mastering Python To Prepare For Data Science And AI And Automating Things in Your Life" , "9870", "75")
+        +coursesPageContent("imgs/team-05.png", "imgs/course-05.jpg", "PHP Examples", "PHP Tutorials And Examples And Practice On Web Application And Connecting With Databases" , "870", "223")
+        +coursesPageContent("imgs/team-03.png", "imgs/course-03.jpg", "Data Structure And Algorithms", "Master The Art Of Data Strcuture And Famous Algorithms Like Sorting, Dividing And Conquering" , "670", "465")
+        +coursesPageContent("imgs/team-02.png", "imgs/course-02.jpg", "Responsive Web Design", "Mastering Responsive Web Design And Media Queries And Know Everything About Breakpoints" , "870", "105")
+        +coursesPageContent("imgs/team-04.png", "imgs/course-04.jpg", "Mastering Web Design", "Master The Art Of Web Designing And Mocking, Prototyping And Creating Web Design Archticture" , "5540", "100")
+        +coursesPageContent("imgs/team-01.png", "imgs/course-01.jpg", "PHP Examples", "PHP Tutorials And Examples And Practice On Web Application And Connecting With Databases" , "580", "334")
+        +coursesPageContent("imgs/team-05.png", "imgs/course-05.jpg", "Mastering Python", "Mastering Python To Prepare For Data Science And AI And Automating Things in Your Life" , "870", "85")
+//- End Page

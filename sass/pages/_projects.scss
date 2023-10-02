@@ -1,0 +1,78 @@
+// Import Variables
+@use "../sass/helpers/variables" as *;
+
+/* - Start Projects Page - */
+.projects-page {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+
+    .project {
+        .date {
+            right: 10px;
+            top: 10px;
+        }
+
+        h4 {
+            font-weight: normal;
+        }
+
+        .team {
+            min-height: 80px;
+
+            a {
+                left: 0;
+                bottom: 0;
+
+                &:nth-child(2) {
+                    left: 25px;
+                }
+
+                &:nth-child(3) {
+                    left: 50px;
+                }
+
+                &:nth-child(4) {
+                    left: 75px;
+                }
+
+                &:nth-child(5) {
+                    left: 100px;
+                }
+
+                &:hover {
+                    z-index: 1000;
+                }
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+                border: 2px solid $white-color;
+            }
+        }
+
+        .d0 {
+            justify-content: flex-end;
+            border-top: 1px solid #eee;
+
+            span {
+                padding: 3px 8px;
+            }
+        }
+
+        .info {
+            border-top: 1px solid #eee;
+        }
+
+        .prog {
+            height: 8px;
+            width: 260px;
+
+            span {
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+/* - End Projects Page - */

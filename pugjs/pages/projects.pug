@@ -1,0 +1,24 @@
+//- Start Page
+extends index
+
+//- Change Page Title
+block pageTitle    
+    title #{arrayOfTitles[3]}
+
+//- Change Page Content
+block contentTitle
+    h1.p-relative.mt-20.mr-20.mb-40.ml-40 #{arrayOfTitles[3]}
+
+block pageContent
+    .projects-page.d-grid.m-20.gap-20
+        +projectsPageContent("Abram Dashboard", "Abram Dashboard Project Design And Programming And Hosting", "15/10/2021", "imgs/team-01.png", "imgs/team-02.png", "imgs/team-03.png", "imgs/team-04.png", "imgs/team-05.png", "Programming", "Design", "Hosting", "Marketing", "bg-red", "width: 50%", "2500")
+        +projectsPageContent("Academy Portal", "Academy Portal Project Design And Programming", "15/10/2021", "imgs/team-01.png", "imgs/team-02.png", "imgs/team-03.png", "", "", "Programming", "Design", "", "", "bg-green", "width: 70%", "1800")
+        +projectsPageContent("Chatting Application", "Chatting Application Project Design", "15/10/2021", "imgs/team-01.png", "imgs/team-02.png", "imgs/team-03.png", "", "", "Design", "", "", "", "bg-blue", "width: 100%", "950")
+        +projectsPageContent("Ahmed Dashboard", "Ahmed Dashboard Project Design And Programming And Hosting", "15/10/2021", "imgs/team-01.png", "imgs/team-02.png", "imgs/team-03.png", "imgs/team-04.png", "", "Programming", "Design", "Hosting", "Marketing", "bg-green", "width: 60%", "1700")
+        +projectsPageContent("Ahmed Portal", "Ahmed Portal Project Design And Programming", "15/10/2021", "imgs/team-01.png", "imgs/team-02.png", "imgs/team-03.png", "", "", "Programming", "Design", "", "", "bg-green", "width: 60%", "850")
+        +projectsPageContent("Mohamed Application", "Mohamed Application Project Design", "15/10/2021", "imgs/team-01.png", "imgs/team-02.png", "imgs/team-03.png", "", "", "Design", "", "", "", "bg-red", "width: 40%", "955")
+        +projectsPageContent("Mohamed Dashboard", "Mohamed Dashboard Project Design And Programming And Hosting", "15/10/2021", "imgs/team-01.png", "imgs/team-02.png", "imgs/team-03.png", "imgs/team-04.png", "", "Programming", "Design", "Hosting", "Marketing", "bg-green", "width: 60%", "1987")
+        +projectsPageContent("Mohamed Portal", "Mohamed Portal Project Design And Programming", "15/10/2021", "imgs/team-01.png", "imgs/team-02.png", "imgs/team-03.png", "", "", "Programming", "Design", "", "", "bg-green", "width: 65%", "3590")
+        +projectsPageContent("Ahmed Application", "Ahmed Application Project Design", "15/10/2021", "imgs/team-01.png", "imgs/team-02.png", "imgs/team-03.png", "", "", "Design", "", "", "", "bg-green", "width: 85%", "2500")
+        +projectsPageContent("Abram Dashboard", "Abram Dashboard Project Design And Programming And Hosting", "15/10/2021", "imgs/team-01.png", "imgs/team-02.png", "imgs/team-03.png", "imgs/team-04.png", "imgs/team-05.png", "Programming", "Design", "Hosting", "Marketing", "bg-red", "width: 50%", "2500")
+//- End Page
